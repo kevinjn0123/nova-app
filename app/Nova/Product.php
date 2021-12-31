@@ -120,10 +120,14 @@ class Product extends Resource
 
 
             Text::make('Categories')->resolveUsing(function () {
-                return Product::find($this->id)->categories->map(function ($categories) {
-                    return $categories->name;
-                })->implode(', ');
-            }),
+                if($this->id !== null){
+                    return Product::find($this->id)->categories->map(function ($categories) {
+                        return $categories->name;
+                    })->implode(', ');
+                } else {
+                    return null;
+                }
+            })->hideWhenCreating()->hideWhenUpdating(),
         ];
     }
 
