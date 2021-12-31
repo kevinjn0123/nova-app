@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e7a1a07eddaa2547b442c4ab29d0b6f",
+    "content-hash": "087dc3fc2ba53fdacb59c6e7a2c7c2d5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3572,6 +3572,121 @@
                 "source": "https://github.com/opis/closure/tree/3.6.2"
             },
             "time": "2021-04-09T13:42:10+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-multiselect-field",
+            "version": "2.3.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-multiselect-field.git",
+                "reference": "d57046f0f43f563bc69e2da03d67d55d5063d455"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-multiselect-field/zipball/d57046f0f43f563bc69e2da03d67d55d5063d455",
+                "reference": "d57046f0f43f563bc69e2da03d67d55d5063d455",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^3.0",
+                "optimistdigital/nova-translations-loader": "^3.0.0",
+                "php": ">=7.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OptimistDigital\\MultiselectField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\MultiselectField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tarvo Reinpalu",
+                    "email": "tarvoreinpalu@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Optimist Digital",
+                    "email": "info@optimistdigital.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A multiple select field for Laravel Nova.",
+            "keywords": [
+                "laravel",
+                "multiselect",
+                "nova",
+                "select"
+            ],
+            "support": {
+                "issues": "https://github.com/optimistdigital/nova-multiselect-field/issues",
+                "source": "https://github.com/optimistdigital/nova-multiselect-field/tree/2.3.13"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/optimistdigital",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-12-13T11:05:31+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-translations-loader",
+            "version": "3.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-translations-loader.git",
+                "reference": "d66303a70e0f1c45d60c78a05658011777a00ce7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-translations-loader/zipball/d66303a70e0f1c45d60c78a05658011777a00ce7",
+                "reference": "d66303a70e0f1c45d60c78a05658011777a00ce7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.21 || ^8.0",
+                "laravel/nova": "^3.0",
+                "php": ">=7.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\NovaTranslationsLoader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "This Laravel Nova package helps developers load translations into their packages.",
+            "keywords": [
+                "laravel",
+                "nova",
+                "optimistdigital",
+                "translations"
+            ],
+            "support": {
+                "issues": "https://github.com/optimistdigital/nova-translations-loader/issues",
+                "source": "https://github.com/optimistdigital/nova-translations-loader/tree/3.1.2"
+            },
+            "time": "2021-06-18T12:46:46+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",

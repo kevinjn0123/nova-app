@@ -15,6 +15,7 @@
         "laravel/nova": "*",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "optimistdigital/nova-multiselect-field": "^2.3",
         "rinvex/laravel-categories": "^6.0",
         "tightenco/ziggy": "^1.0",
         "vyuldashev/nova-permission": "^3.0"
