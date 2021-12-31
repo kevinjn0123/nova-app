@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
@@ -29,6 +30,21 @@ class Product extends Resource
      * @var string
      */
     public static $title = 'name';
+
+
+    //
+
+    /**
+     * The id of viewing product.
+     *
+     * @var string
+     */
+    public function product_id()
+    {
+        return $this->id;
+    }
+
+    //
 
     /**
      * Get the search result subtitle for the resource.
@@ -81,10 +97,33 @@ class Product extends Resource
                 ->sortable()
                 ->default('USD')
                 ->rules('required', 'max:255'),
+//
+//            Select::make('Category')
+//                ->options(Category::all()->map(function ($cat) {
+//                    return $cat->name;
+//                }))
+//                ->nullable(),
 
-            Multiselect::make('Categories')
-                ->options(app('rinvex.categories.category')->first()->name)
-                ->nullable(),
+//            Multiselect::make('Category')->asyncResource(Category::class),
+//            BelongsToMany::make('Categories', 'categories', Category::class),
+            BelongsToMany::make('Categories')->fields(new ProductCategoryFields())->searchable(function ($request) {
+                return true;
+            }),
+//            Select::make('Product Category')->options(['1' => 'Enabled', '0' => 'Disabled'])->displayUsingLabels()->resolveUsing(function ($active) {
+//                return (string) $active;
+//            })->nullable(),
+//            Multiselect::make('Product Categories')->options(
+//                Product::find($this->product_id())->categories->map(function ($category) {
+//                    return collect([$category->slug => $category->name])->implode(',');
+//                })
+//            ),
+
+
+            Text::make('Categories')->resolveUsing(function () {
+                return Product::find($this->id)->categories->map(function ($categories) {
+                    return $categories->name;
+                })->implode(', ');
+            }),
         ];
     }
 

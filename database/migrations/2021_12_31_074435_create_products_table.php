@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->decimal('base_price', 8, 2)->nullable();
             $table->decimal('sale_price', 8, 2)->nullable();
             $table->string('currency')->nullable();
+//            $table->string('product_categories')->nullable();
             $table->timestamps();
         });
     }
