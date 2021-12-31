@@ -1,0 +1,134 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+    --main-color-primary: #09f;
+    --page-color-primary: #09f;
+    --main-color-navigationBorder: rgba(0, 0, 0, 0.05);
+    --main-color-navigation: rgba(255, 255, 255, 1);
+    --main-color-navigationColor: rgba(0, 0, 0, 1);
+    --main-color-navigationLight: rgba(0, 0, 0, 0.05);
+    --main-color-navigationThemeColor: rgba(0, 0, 0, 1);
+    --main-color-navigationMediumColor: rgba(0, 0, 0, 0.7);
+    --main-color-navigationLightColor: rgba(0, 0, 0, 0.5);
+    --main-dimension-fontSizeDynamic: 16;
+    --main-dimension-fontSizeDifference: 4;
+    --main-dimension-gutterLeft: max(20px, calc(20px + env(safe-area-inset-left, 0px)));
+    --main-dimension-gutterRight: max(20px, calc(20px + env(safe-area-inset-right, 0px)));
+    --container-gutters: calc(var(--main-dimension-gutterLeft) + var(--main-dimension-gutterRight));
+}
+
+#__root[data-navigation-variant=primary] .Navigation_desktop {
+    --main-color-navigation: var(--navigation-color-primary, var(--page-color-primary)) !important;
+}
+
+#__root[data-navigation-variant=primary] .Navigation_mobile:not(.isOpen) {
+    --main-color-navigation: var(--navigation-color-primary, var(--page-color-primary)) !important;
+}
+
+.Navigation_primaryButton, .Navigation_primaryInlineButton {
+    background: var(--navigation-color-primary, var(--page-color-primary));
+    color: #fff;
+}
+
+/*#__root[data-navigation-variant=primary] .Navigation_primaryButton, #__root[data-navigation-variant=primary] .Navigation_primaryInlineButton {*/
+/*    background: var(--main-color-navigationThemeColor);*/
+/*    color: var(--navigation-color-primary, var(--page-color-primary));*/
+/*}*/
+
+#__root[data-navigation-variant=primary] .Navigation_desktop:not(.isOpen) .Navigation_primaryButton, #__root[data-navigation-variant=primary] .Navigation_desktop:not(.isOpen) .Navigation_primaryInlineButton {
+    background: var(--main-color-navigationThemeColor);
+    color: var(--navigation-color-primary, var(--page-color-primary));
+}
+
+#__root[data-navigation-variant=primary] .Navigation_mobile:not(.isOpen) .Navigation_primaryButton, #__root[data-navigation-variant=primary] .Navigation_mobile:not(.isOpen) .Navigation_primaryInlineButton {
+    background: var(--main-color-navigationThemeColor);
+    color: var(--navigation-color-primary, var(--page-color-primary));
+}
+
+#__root[data-navigation-variant=primary] {
+    --main-color-navigationThemeColor: #fff !important;
+}
+
+#__root[data-navigation-variant=primary] .Navigation_desktop .Navigation_main, #__root[data-navigation-variant=transparent] .Navigation_desktop .Navigation_main {
+    --main-color-navigationMediumColor: #fff !important;
+    --main-color-navigationColor: #fff !important;
+    --chakra-colors-blackAlpha-100: rgba(255, 255, 255, 0.12) !important;
+}
+
+/*#__root[data-navigation-variant=primary] .Navigation_hamburger {*/
+/*    --main-color-navigationColor: #fff !important;*/
+/*    --chakra-colors-blackAlpha-100: rgba(255, 255, 255, 0.12) !important;*/
+/*}*/
+
+#__root[data-navigation-variant=primary] .Navigation_mobile:not(.isOpen), #__root[data-navigation-variant=transparent] .Navigation_mobile:not(.isOpen) {
+    --main-color-navigationMediumColor: #fff !important;
+    --main-color-navigationColor: #fff !important;
+    --main-color-navigationThemeColor: #fff !important;
+    --chakra-colors-blackAlpha-100: rgba(255, 255, 255, 0.12) !important;
+}
+
+
+/*#__root[data-navigation-variant=primary][data-navigation-color-theme=dark] .Navigation_desktop .Navigation_main, #__root[data-navigation-variant=transparent][data-navigation-color-theme=dark] .Navigation_desktop .Navigation_main {*/
+/*    --system-color-navigationLight: var(--system-palette-white12)!important;*/
+/*    --system-color-navigationMediumColor: var(--system-palette-white)!important;*/
+/*}*/
+
+/*#__root[data-navigation-variant=primary][data-navigation-color-theme=dark] {*/
+/*    --main-color-navigationThemeColor: #fff !important;*/
+/*}*/
+
+/*#__root[data-navigation-variant=primary][data-navigation-color-theme=light] {*/
+/*    --main-color-navigationThemeColor: #000 !important;*/
+/*}*/
+
+.container-w-gutter {
+    max-width: calc(100vw - var(--container-gutters));
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: calc(1px * var(--system-dimension-fontSizeDynamic));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga", "clig";
+    font-variant-ligatures: common-ligatures;
+    font-weight: 400;
+    letter-spacing: -.004em;
+    line-height: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100% !important;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    word-break: break-word;
+}
+
+#__root, body, html {
+    width: 100%;
+    /*min-height: 100vh;*/
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#__root {
+    --scrollbar-width: calc(100vw - 100%);
+    position: relative;
+    display: flex;
+    width: 100vw;
+    /*overflow-y: auto;*/
+    /*overflow-x: hidden;*/
+    flex-flow: column nowrap;
+}
+
+.js-focus-visible :focus:not(.focus-visible),
+.js-focus-visible :focus:not(.focus-visible) + [data-focus] {
+    outline: none;
+    box-shadow: none;
+}
